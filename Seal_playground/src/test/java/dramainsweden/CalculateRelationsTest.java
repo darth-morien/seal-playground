@@ -24,7 +24,7 @@ public class CalculateRelationsTest {
 		
 	}
 	
-	@Test (expected = IllegalArgumentException.class)
+	@Test 
 	public void testBandMembers() {
 		List<Relations> relList = new ArrayList<Relations>(); 
 		relList.add(new Relations(1,2));
