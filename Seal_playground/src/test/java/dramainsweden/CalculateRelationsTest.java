@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.TreeSet;
 
 import dramainsweden.CalculateRelations;
 
@@ -41,7 +42,7 @@ public class CalculateRelationsTest {
 		relList.add(new Relations(2,3));
 		relList.add(new Relations(1,3));
 		relList.add(new Relations(4,5));
-		Set<Integer> expectedBandList = new HashSet<>();
+		Set<Integer> expectedBandList = new TreeSet<>();
 		expectedBandList.add(1);
 		expectedBandList.add(2);
 		expectedBandList.add(3);
@@ -58,7 +59,7 @@ public class CalculateRelationsTest {
 		relList.add(new Relations(2,3));
 		relList.add(new Relations(1,3));
 		relList.add(new Relations(4,5));
-		Set<Integer> expectedBandList = new HashSet<>();
+		Set<Integer> expectedBandList = new TreeSet<>();
 		expectedBandList.add(1);
 		expectedBandList.add(2);
 		expectedBandList.add(3);
@@ -77,7 +78,7 @@ public class CalculateRelationsTest {
 		relList.add(new Relations(62,133));
 		relList.add(new Relations(133,51));
 		relList.add(new Relations(53,133));
-		Set<Integer> expectedBandList = new HashSet<>();
+		Set<Integer> expectedBandList = new TreeSet<>();
 		expectedBandList.add(51);
 		expectedBandList.add(52);
 		expectedBandList.add(53);
@@ -89,6 +90,26 @@ public class CalculateRelationsTest {
 	
 	}
 
+	@Test 
+	public void testBandMembers_anotherOrder() {
+		List<Relations> relList = new ArrayList<Relations>(); 
+		relList.add(new Relations(51,62));
+		relList.add(new Relations(52,62));
+		relList.add(new Relations(53,62));
+		relList.add(new Relations(62,133));
+		relList.add(new Relations(133,51));
+		relList.add(new Relations(53,133));
+		Set<Integer> expectedBandList = new TreeSet<>();
+		expectedBandList.add(51);
+		expectedBandList.add(133);
+		expectedBandList.add(62);
+		expectedBandList.add(53);
+		expectedBandList.add(52);
+		CalculateRelations calc = new CalculateRelations(relList);
+		calc.figureOutBandMembers();
+		assertArrayEquals(expectedBandList.toArray(), calc.getBandList().toArray());
+	
+	}
 
 
 	
