@@ -26,7 +26,8 @@ public class CalculateRelations {
 	}
 
 	public Set<Integer> figureOutBandMembers() {
-		//validateRelations();
+		
+		validateRelations();
 		
 		int currentFirstPerson = 0;
 		int currentSecondPerson = 0;
