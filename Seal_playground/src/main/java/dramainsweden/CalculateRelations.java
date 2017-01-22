@@ -6,8 +6,15 @@ import java.util.ArrayList;
 import java.util.HashSet;
 
 public class CalculateRelations {
+	
+	
 
 	private List<Relations> relationsList = new ArrayList<>();
+	
+	public CalculateRelations(List<Relations> relationsList) {
+		this.relationsList = relationsList;
+	}
+
 	private Set<Integer> bandList = new HashSet<>();
 
 	public Set<Integer> getBandList() {

@@ -14,7 +14,7 @@ import org.junit.Test;
 
 public class CalculateRelationsTest {
 	
-	CalculateRelations calc = new CalculateRelations();
+	
 
 	/*@Test (expected = IllegalArgumentException.class)
 	public void testValidateRelations() {
@@ -31,12 +31,13 @@ public class CalculateRelationsTest {
 		relList.add(new Relations(2,3));
 		relList.add(new Relations(1,3));
 		relList.add(new Relations(4,5));
-		Set<Integer> actualBandList = new HashSet<>();
-		actualBandList.add(1);
-		actualBandList.add(2);
-		actualBandList.add(3);
+		Set<Integer> expectedBandList = new HashSet<>();
+		expectedBandList.add(1);
+		expectedBandList.add(2);
+		expectedBandList.add(3);
+		CalculateRelations calc = new CalculateRelations(relList);
 		calc.figureOutBandMembers();
-		assertArrayEquals(calc.getBandList().toArray(), actualBandList.toArray());
+		assertArrayEquals(expectedBandList.toArray(), calc.getBandList().toArray());
 	
 	}
 
