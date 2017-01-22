@@ -14,15 +14,15 @@ import org.junit.Test;
 
 public class CalculateRelationsTest {
 	
-	CalculateRelations a = new CalculateRelations();
+	CalculateRelations calc = new CalculateRelations();
 
-	@Test (expected = IllegalArgumentException.class)
+	/*@Test (expected = IllegalArgumentException.class)
 	public void testValidateRelations() {
 		List<Relations> relList = new ArrayList<Relations>(); 
 		relList.add(new Relations(2,2));
-		a.validateRelations();
+		calc.validateRelations();
 		
-	}
+	}*/
 	
 	@Test 
 	public void testBandMembers() {
@@ -35,7 +35,8 @@ public class CalculateRelationsTest {
 		actualBandList.add(1);
 		actualBandList.add(2);
 		actualBandList.add(3);
-		assertEquals(CalculateRelations.figureOutBandMembers(), actualBandList);
+		calc.figureOutBandMembers();
+		assertArrayEquals(calc.getBandList().toArray(), actualBandList.toArray());
 	
 	}
 

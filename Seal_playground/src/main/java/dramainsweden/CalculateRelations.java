@@ -7,8 +7,8 @@ import java.util.HashSet;
 
 public class CalculateRelations {
 
-	private static List<Relations> relationsList = new ArrayList<>();
-	private static Set<Integer> bandList = new HashSet<>();
+	private List<Relations> relationsList = new ArrayList<>();
+	private Set<Integer> bandList = new HashSet<>();
 
 	public Set<Integer> getBandList() {
 		return bandList;
@@ -18,7 +18,7 @@ public class CalculateRelations {
 		return relationsList;
 	}
 
-	public static Set<Integer> figureOutBandMembers() {
+	public Set<Integer> figureOutBandMembers() {
 		//validateRelations();
 		
 		int currentFirstPerson = 0;
